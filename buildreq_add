@@ -8,3 +8,5 @@ pygobject-legacy-legacypython
 pygobject-legacy-dev
 pygobject-legacy
 pycairo-legacypython
+numpy-legacypython
+numpy
