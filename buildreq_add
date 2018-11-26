@@ -1,0 +1,10 @@
+# This file contains additional build requirements that did not get
+# picked up automatically. One name per line, no whitespace.
+pygobject
+python-core
+python-dev
+pygobject
+pygobject-legacy-legacypython
+pygobject-legacy-dev
+pygobject-legacy
+pycairo-legacypython
