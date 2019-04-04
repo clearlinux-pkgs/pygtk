@@ -7,6 +7,6 @@ pygobject
 pygobject-legacy-legacypython
 pygobject-legacy-dev
 pygobject-legacy
-pycairo-legacypython
-numpy-legacypython
+deprecated-pycairo-legacypython
+deprecated-numpy-legacypython
 numpy

@@ -4,10 +4,10 @@
 #
 Name     : pygtk
 Version  : 2.24.0
-Release  : 3
+Release  : 4
 URL      : https://download.gnome.org/sources/pygtk/2.24/pygtk-2.24.0.tar.gz
 Source0  : https://download.gnome.org/sources/pygtk/2.24/pygtk-2.24.0.tar.gz
-Summary  : Python bindings for GTK
+Summary  : Python bindings for the GTK widget set
 Group    : Development/Tools
 License  : LGPL-2.1
 Requires: pygtk-bin = %{version}-%{release}
@@ -16,8 +16,9 @@ Requires: pygtk-license = %{version}-%{release}
 Requires: pygtk-python = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 BuildRequires : buildreq-gnome
+BuildRequires : deprecated-numpy-legacypython
+BuildRequires : deprecated-pycairo-legacypython
 BuildRequires : numpy
-BuildRequires : numpy-legacypython
 BuildRequires : pkgconfig(atk)
 BuildRequires : pkgconfig(gtk+-2.0)
 BuildRequires : pkgconfig(gtk+-unix-print-2.0)
@@ -25,7 +26,6 @@ BuildRequires : pkgconfig(libglade-2.0)
 BuildRequires : pkgconfig(pango)
 BuildRequires : pkgconfig(pangocairo)
 BuildRequires : pkgconfig(pycairo)
-BuildRequires : pycairo-legacypython
 BuildRequires : pygobject
 BuildRequires : pygobject-legacy
 BuildRequires : pygobject-legacy-dev
@@ -35,8 +35,9 @@ BuildRequires : python-dev
 BuildRequires : python3-dev
 
 %description
-Python.  It is targetted at GTK 2.x, and can be used in
-        conjunction with gnome-python to write Gnome applications.
+PyGTK is an extension module for python that gives you access to the GTK+
+widget set.  Just about anything you can write in C with GTK+ you can write
+in python with PyGTK (within reason), but with all the benefits of python.
 
 %package bin
 Summary: bin components for the pygtk package.
@@ -62,6 +63,7 @@ Group: Development
 Requires: pygtk-bin = %{version}-%{release}
 Requires: pygtk-data = %{version}-%{release}
 Provides: pygtk-devel = %{version}-%{release}
+Requires: pygtk = %{version}-%{release}
 
 %description dev
 dev components for the pygtk package.
@@ -108,12 +110,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1543236647
+export SOURCE_DATE_EPOCH=1554343474
 %configure --disable-static PYTHON=/usr/bin/python2
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1543236647
+export SOURCE_DATE_EPOCH=1554343474
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pygtk
 cp COPYING %{buildroot}/usr/share/package-licenses/pygtk/COPYING
