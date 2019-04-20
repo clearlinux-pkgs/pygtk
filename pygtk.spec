@@ -4,7 +4,7 @@
 #
 Name     : pygtk
 Version  : 2.24.0
-Release  : 4
+Release  : 5
 URL      : https://download.gnome.org/sources/pygtk/2.24/pygtk-2.24.0.tar.gz
 Source0  : https://download.gnome.org/sources/pygtk/2.24/pygtk-2.24.0.tar.gz
 Summary  : Python bindings for the GTK widget set
