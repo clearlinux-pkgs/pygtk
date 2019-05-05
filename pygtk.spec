@@ -4,7 +4,7 @@
 #
 Name     : pygtk
 Version  : 2.24.0
-Release  : 5
+Release  : 6
 URL      : https://download.gnome.org/sources/pygtk/2.24/pygtk-2.24.0.tar.gz
 Source0  : https://download.gnome.org/sources/pygtk/2.24/pygtk-2.24.0.tar.gz
 Summary  : Python bindings for the GTK widget set
@@ -110,12 +110,19 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1554343474
+export SOURCE_DATE_EPOCH=1557023145
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %configure --disable-static PYTHON=/usr/bin/python2
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1554343474
+export SOURCE_DATE_EPOCH=1557023145
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pygtk
 cp COPYING %{buildroot}/usr/share/package-licenses/pygtk/COPYING
